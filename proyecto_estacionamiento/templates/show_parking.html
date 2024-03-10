@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estacionamiento Guardado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbarP.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='show_parking.css') }}">
+</head>
+<body>
+{% include 'navbarP.html' %}
+<div class="container">
+    <h1>Estacionamiento Guardado</h1>
+    <div id="estacionamiento">
+        {% for space in spaces %}
+        <div class="espacio" style="left: {{ space.x_position }}px; top: {{ space.y_position }}px;">
+            Espacio {{ space.id }} - {{ 'Ocupado' if space.occupied else 'Libre' }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

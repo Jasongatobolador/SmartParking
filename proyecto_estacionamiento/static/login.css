@@ -1,0 +1,107 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ecf0f1;
+}
+
+.container {
+    width: 350px;
+    perspective: 1000px;
+}
+
+.auth-form {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: transform 0.8s ease;
+    position: relative;
+    transform-style: preserve-3d; /* Preserves the 3D position during the animation */
+}
+
+#login-container,
+#register-container {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden; /* Hide the back side of the forms */
+}
+
+#login-container {
+    transform: rotateY(0deg);
+}
+
+#register-container {
+    transform: rotateY(180deg);
+}
+
+.auth-form h2 {
+    font-weight: 600;
+    text-align: center;
+}
+
+.auth-form input,
+.auth-form button {
+    width: calc(100% - 40px); /* Full width minus padding */
+    margin: 10px 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.auth-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.auth-form button:hover {
+    background-color: #2980b9;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.switch-btn {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    transition: color 0.3s;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.switch-btn:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles for labels or any other elements can be added below */
+.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for the rotating animation container */
+.flip-container {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* When the container flips, rotate it 180 degrees */
+.flip-container.flip {
+    transform: rotateY(180deg);
+}

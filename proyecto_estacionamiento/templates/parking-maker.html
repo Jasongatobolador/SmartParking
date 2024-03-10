@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapeo de Estacionamiento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbarP.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='parking-maker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+</head>
+<body>
+{% include 'navbarP.html' %}
+<div id="estacionamiento-controls">
+    <button id="btnCrearEspacio">Crear Espacio</button>
+    <button id="btnGuardarEstacionamiento">Guardar Estacionamiento</button>
+</div>
+<div id="estacionamiento"></div>
+
+<script src="{{ url_for('static', filename='js/parking-maker.js') }}"></script>
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- navbar.html -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Brand/logo -->
+        <a href="/" class="navbar-brand">
+            <img class="Logo" src="{{ url_for('static', filename='imgs/Logo (2).png') }}" alt="Logo">
+        </a>
+        
+        <!-- Toggler/Collapsibe Button -->
+        <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/indexPropietario"  class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/MapaEstacionamiento" class="nav-link">Mapa estacionamiento</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/mapeo-estacionamiento" class="nav-link">Crear Estacionamiento</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/show_parking" class="nav-link">Estacionamiento</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+// JavaScript para el menú de hamburguesa en dispositivos móviles
+document.addEventListener('DOMContentLoaded', function() {
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    navbarToggler.addEventListener('click', function() {
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+        navbarCollapse.classList.toggle('active');
+    });
+});
+</script>

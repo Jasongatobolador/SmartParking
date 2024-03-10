@@ -1,0 +1,84 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/static/imgs/Fondo.jpg');
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    color: #333; /* Asegúrate de que el texto sea legible sobre el fondo animado */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-top: 50px;
+}
+
+h2 {
+    padding-top: 20px;
+    color: white;
+}
+/* Estilos del Mapa */
+#map {
+    height: 60vh; /* 60% de la altura de la ventana de visualización */
+    width: 80vw; /* 80% del ancho de la ventana de visualización */
+    margin: 2rem auto; /* Centrado con un margen superior e inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border: 1px solid #ccc; /* Borde sutil */
+}
+
+/* Estilos de la Barra de Búsqueda */
+#searchPanel {
+    text-align: center;
+    margin-bottom: 1rem; /* Espacio entre el panel de búsqueda y el mapa */
+}
+
+#originInput {
+    width: 25%; /* Ancho relativo al contenedor */
+    padding: 0.5rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde sutil */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+}
+
+#destinationInput {
+    width: 25%; /* Ancho relativo al contenedor */
+    padding: 0.5rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde sutil */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+}
+
+/* Estilos del Botón de Búsqueda */
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    background-color: #0056b3; /* Color de fondo */
+    color: white; /* Color de texto */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    cursor: pointer; /* Cursor tipo puntero */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #003d82; /* Cambio de color al pasar el mouse */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    #map {
+        width: 90vw; /* Más ancho en pantallas pequeñas */
+        height: 50vh;
+    }
+
+    #locationInput {
+        width: 70%; /* Más ancho en pantallas pequeñas */
+    }
+}
+
+/* Añadir animaciones */
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

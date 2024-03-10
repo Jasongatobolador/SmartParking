@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de Estacionamiento</title>
+    <style>
+        body {
+            text-align: center; /* Centra el contenido del body */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+            flex-wrap: wrap; /* Permite la envoltura de elementos */
+        }
+        .estacionamiento {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 10px;
+            position: relative; /* Para posicionar absolutamente la etiqueta dentro */
+        }
+        .titulo {
+            margin: 20px 0; /* Margen arriba y abajo */
+            font-size: 24px; /* Tamaño del título */
+        }
+        .etiqueta {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="titulo">Estado de Estacionamiento</div>
+    <div class="container">
+        <div id="estacionamiento1" class="estacionamiento"><div class="etiqueta">Cajón 1</div></div>
+        <div id="estacionamiento2" class="estacionamiento"><div class="etiqueta">Cajón 2</div></div>
+        <div id="estacionamiento3" class="estacionamiento"><div class="etiqueta">Cajón 3</div></div>
+        <div id="estacionamiento4" class="estacionamiento"><div class="etiqueta">Cajón 4</div></div>
+    </div>
+
+    <script>
+        // El código JavaScript se mantiene igual, se encarga de actualizar el estado de cada estacionamiento.
+        function actualizarEstado() {
+            fetch('/estado')
+            .then(response => response.json())
+            .then(data => {
+                const estacionamiento1 = document.getElementById('estacionamiento1');
+                const estacionamiento2 = document.getElementById('estacionamiento2');
+                const estacionamiento3 = document.getElementById('estacionamiento3');
+                const estacionamiento4 = document.getElementById('estacionamiento4');
+                
+                // Asegúrate de ajustar la lógica de actualización de colores según tus necesidades
+                estacionamiento1.style.backgroundColor = data[1] === 'ocupado' ? 'green' : 'red';
+                estacionamiento2.style.backgroundColor = data[2] === 'ocupado' ? 'green' : 'red';
+                estacionamiento3.style.backgroundColor = data[3] === 'ocupado' ? 'green' : 'red';
+                estacionamiento4.style.backgroundColor = data[4] === 'ocupado' ? 'green' : 'red';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Actualizar el estado cada 5 segundos
+        setInterval(actualizarEstado, 5000);
+
+        // Llamada inicial para actualizar inmediatamente al cargar la página
+        actualizarEstado();
+    </script>
+</body>
+</html>
+

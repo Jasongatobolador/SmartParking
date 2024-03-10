@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login-register.css') }}">
+</head>
+<body>
+    <div class="register-container">
+        <form action="{{ url_for('register') }}" method="post">
+            <h2>Registrarse</h2>
+            {% if msg %}
+                <p class="error">{{ msg }}</p>
+            {% endif %}
+            <input type="text" name="fullname" placeholder="Nombres y apellidos" required>
+            <input type="email" name="email" placeholder="Correo" required>
+            <input type="tel" name="phone" placeholder="Teléfono" required>
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+            <p class="login-link">¿Ya tienes usuario? <a href="{{ url_for('login') }}">Inicia Sesión</a></p>
+        </form>
+    </div>
+</body>
+</html>

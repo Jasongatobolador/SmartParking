@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sección de Comentarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+</head>
+<body>  
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+            <img class="Logo" src="{{ url_for('static', filename='imgs/Logo (2).png') }}" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/buscador" class="nav-link">Buscador</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/comentarios" class="nav-link">Comentarios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/temporizador" class="nav-link">Temporizador</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contacto" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>  
+<div class="contenedor">
+    <div class="contenedor-comentarios">
+        <h2>Deja tu Comentario</h2>
+        <button id="btnComentar">Comentar</button>
+        <div id="contenedor-formulario">
+            <form class="formulario-comentario" action="/comentar" method="POST">
+                <textarea name="comentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+                <button type="submit">Enviar Comentario</button>
+            </form>
+        </div>
+    </div>
+    <div class="comentarios-existente">
+        <h3>Comentarios</h3>
+        {% for comentario in comentarios %}
+        <div class="comentario">
+            <div class="perfil-usuario"></div>
+            <p><strong>{{ comentario.nombre }}</strong>: {{ comentario.texto }}</p>
+        </div>
+        {% endfor %}
+    </div>    
+</div>
+
+</body>
+<script>
+    document.getElementById('btnComentar').addEventListener('click', function() {
+        var contenedorFormulario = document.getElementById('contenedor-formulario');
+        var botonComentar = document.getElementById('btnComentar');
+        
+        if (contenedorFormulario.classList.contains('visible')) {
+            contenedorFormulario.classList.remove('visible');
+            botonComentar.textContent = 'Comentar';
+            botonComentar.style.backgroundColor = '#007bff';
+        } else {
+            contenedorFormulario.classList.add('visible');
+            botonComentar.textContent = 'Cerrar';
+            botonComentar.style.backgroundColor = '#FF0000';
+        }
+    });
+</script>
+</html>

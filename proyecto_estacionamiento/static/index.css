@@ -1,0 +1,187 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #96b3ff ;
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    color: #333; /* Asegúrate de que el texto sea legible sobre el fondo animado */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-top: 50px;
+}
+/* Hero Section */
+.hero {
+    transition: height 0.5s ease, background-color 0.5s ease;
+    height: 100vh;
+    background: url('/static/imgs/Banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    transition: transform 0.5s ease; /* Suaviza la transición del movimiento */
+}
+
+.hero.small {
+    height: 30vh; /* Nueva altura después del desplazamiento */
+    background-color: rgba(0, 0, 0, 2); /* Oscurece la imagen */
+}
+
+.hero.small .hero-content {
+    transform: translateY(-20%); /* Mueve el contenido hacia arriba */
+}
+
+/* Botón Principal */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Sección de Servicios */
+.services {
+    background: url('/static/imgs/Fondo.jpg'); /* Un fondo claro o puedes elegir otro color que complemente el diseño */
+    padding: 60px 0; /* Espaciado vertical */
+    text-align: center; /* Centra el texto de los títulos y descripciones */
+}
+
+.services, .features {
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+}
+
+.services .container {
+    max-width: 1200px; /* Un ancho máximo para el contenido */
+    margin: auto; /* Centra el contenedor */
+    padding: 0 15px; /* Espaciado interno para el contenedor */
+}
+
+.services h2 {
+    margin-bottom: 30px; /* Espaciado después del título de la sección */
+    font-size: 2.5rem; /* Tamaño del título de la sección */
+    color: #ffffff; /* Color del texto para el título de la sección */
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around; /* Distribuye los servicios uniformemente */
+    flex-wrap: wrap; /* Permite envolver los elementos si no caben en una sola línea */
+}
+
+.service {
+    max-width: 350px; /* Ancho máximo para cada servicio */
+    margin-bottom: 30px; /* Espaciado entre los servicios */
+    padding: 20px; /* Espaciado interno para cada servicio */
+    background-color: #ffffff; /* Fondo para cada servicio */
+    border-radius: 8px; /* Bordes redondeados para las tarjetas de servicios */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
+    transition: transform 0.3s ease; /* Transición para el efecto de hover */
+}
+
+.service img {
+    width: 100px; /* Tamaño de la imagen del servicio */
+    margin-bottom: 20px; /* Espaciado después de la imagen */
+}
+
+.service h3 {
+    margin-bottom: 10px; /* Espaciado después del título del servicio */
+    font-size: 1.5rem; /* Tamaño del título del servicio */
+}
+
+.service p {
+    font-size: 1rem; /* Tamaño del párrafo de descripción del servicio */
+    color: #666; /* Color del texto para la descripción */
+}
+
+/* Efecto de hover para las tarjetas de servicio */
+.service:hover {
+    transform: translateY(-5px); /* Mueve la tarjeta hacia arriba ligeramente */
+}
+
+/* Sección de Características */
+.features {
+    background-color: #5CA9C4 ;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Esto asegura que haya espacio entre los elementos */
+}
+
+/* Estilo de los Elementos de Características */
+.feature-item {
+    flex-basis: calc(50% - 10px); /* Establece una base de 50% del contenedor, restando 10px para el margen */
+    margin: 5px; /* Proporciona un poco de margen alrededor de los elementos */
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+h1{
+   font-size: 100px; 
+
+}
+ p{
+    font-size:30px ;
+ }
+
+ .p1{
+    font-size: 25px;
+ }
+ .p2{
+    font-size: 25px;
+ }
+/* Fondo y Color de Texto para Características */
+.feature-item.white-background {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333; /* Texto oscuro para contraste */
+}
+
+.feature-item.dark-background {
+    background-color: #203a43; /* Fondo oscuro */
+    color: #ffffff; /* Texto claro para contraste */
+}
+
+/* Alineación Individual de Características */
+.feature-left {
+    margin-right: auto; /* Alinea a la izquierda */
+}
+
+.feature-right {
+    margin-left: auto; /* Alinea a la derecha */
+}
+
+/* Aumentar el espacio entre las secciones */
+.features + .about {
+    margin-top: 50px; /* O el valor que consideres adecuado para el espaciado */
+}
+
+/* Sección Acerca de */
+.about {
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Contenedor Genérico */
+.container {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

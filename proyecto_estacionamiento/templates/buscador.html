@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscador de Ubicaciones</title>
+    <meta name="description" content="Encuentra rutas y ubicaciones fácilmente con nuestro buscador.">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='buscador.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3d7eD7f19hlf7efYxuGZ7ZhkfL4fyMpY&callback=initMap&libraries=places,geometry,directions&v=weekly" async defer></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div id="searchPanel">
+        <h2>Buscador de Ubicaciones</h2>
+        <input id="originInput" type="text" placeholder="Introduce la ubicación de origen">
+        <input id="destinationInput" type="text" placeholder="Introduce una ubicación de destino">
+        <button id="searchButton">Buscar</button>
+    </div>
+    <div id="map" style="height: 400px;"></div> <!-- Asegúrate de definir un alto para el mapa -->
+    <script src="{{ url_for('static', filename='js/buscador.js') }}" defer></script>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,120 @@
+body {
+    background: linear-gradient(-45deg, #00003d, #00276c, #014ba0, #5b7dcf, #96b3ff, #000, #fff);
+    background-size: 600% 600%;
+    -webkit-animation: gradientAnimation 12s ease infinite;
+    -moz-animation: gradientAnimation 12s ease infinite;
+    animation: gradientAnimation 12s ease infinite;
+
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ecf0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.login-container, .register-container {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: fit-content;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"]{
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+    outline: none;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a78d1;
+}
+
+a {
+    color: #1b9bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0a78d1;
+}
+
+.register-link a, .login-link a {
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.welcome-message {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.welcome-message p {
+    margin: 0;
+}
+
+.welcome-message button {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');

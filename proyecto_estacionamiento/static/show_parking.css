@@ -1,0 +1,64 @@
+body {
+    font-family: 'Nunito', sans-serif; /* Esta es una fuente de Google Fonts que es moderna y legible */
+    background: url('/static/imgs/Fondo.jpg'); /* Colores más suaves para un aspecto profesional */
+    color: #f0f0f0; /* Color de texto claro para contraste pero no puro blanco */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura de la vista completa para centrar el contenido verticalmente */
+}
+
+.container {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    max-width: 900px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente para el contenedor */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque para el fondo detrás del contenedor */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#estacionamiento {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en filas */
+    justify-content: space-around; /* Distribuye los espacios uniformemente */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    padding: 10px; /* Agrega algo de espacio dentro del contenedor */
+    gap: 10px; /* Espacio entre los espacios de estacionamiento */
+}
+
+.espacio {
+    width: 18%; /* Usa porcentajes para responsividad */
+    height: 100px; /* Altura más grande para un mejor clic */
+    background-color: #76D7C4;
+    border: none; /* Elimina el borde para un diseño más limpio */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em; /* Aumenta el tamaño de fuente para mejorar la legibilidad */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para la profundidad */
+    transition: transform 0.2s ease; /* Transición suave para el hover */
+    margin-bottom: 10px;
+}
+
+.espacio:hover {
+    transform: translateY(-5px); /* Eleva el espacio al pasar el mouse por encima */
+}
+
+.espacio.ocupado {
+    background-color: #E74C3C;
+}
+
+h1 {
+    color: #f0f0f0;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mejorar el contraste */
+}

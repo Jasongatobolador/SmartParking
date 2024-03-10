@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temporizador de Estacionamiento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='timer.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Temporizador de Estacionamiento</h1>
+    <label for="hours">Horas:</label>
+    <input type="number" id="hours" name="hours" min="1" max="24">
+    <button id="startTimer">Iniciar Tiempo</button>
+
+    <div id="timer" style="display:none;">
+        <h2>Temporizador: <span id="timeLeft">00:00:00</span></h2>
+        <button id="stopTimer">Detener Temporizador</button>
+    </div>
+
+    <div id="confirmation" style="display:none;">
+        <p>¿Está seguro de que desea detener el temporizador?</p>
+        <button id="confirmStop">Sí, detener</button>
+        <button id="cancelStop">No, continuar</button>
+    </div>
+
+    <div id="summary" style="display:none;">
+        <p>Tiempo Total Usado: <span id="totalHours"></span> horas</p>
+        <p>Costo por Hora: $<span id="ratePerHour">{{ rate_per_hour }}</span></p>
+        <p>Total a Pagar: $<span id="totalCost"></span></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</body>
+</html>

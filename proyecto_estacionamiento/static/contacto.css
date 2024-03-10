@@ -1,0 +1,33 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/static/imgs/Fondo.jpg');
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    color: white; /* Asegúrate de que el texto sea legible sobre el fondo animado */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-top: 50px;
+}
+.contact-container {
+    text-align: center;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-container h1 {
+    margin-bottom: 20px;
+}
+
+.qr-code {
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

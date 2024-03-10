@@ -1,0 +1,92 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/static/imgs/Fondo.jpg');
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    color: white; /* Asegúrate de que el texto sea legible sobre el fondo animado */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-top: 50px;
+}
+
+#estacionamiento {
+    margin-left: 400px;
+    width: 520px; /* Ancho total = ancho de columna * número de columnas + margen */
+    min-height: 100px;
+    height: 520px;
+    position: relative;
+    background: #eaeaea;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.espacio {
+    width: 90px; /* Ancho de cada espacio */
+    height: 40px; /* Alto de cada espacio */
+    background: #5dade2;
+    position: absolute; /* Posición absoluta dentro del área de estacionamiento */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px; /* Centrar texto verticalmente */
+    box-sizing: border-box; /* Incluir el borde y el relleno en el ancho y alto */
+    margin: 5px; /* Espacio entre espacios */
+    transition: background-color 0.3s ease;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.espacio:hover{
+    background-color: #3498db;
+    cursor: pointer;
+}
+
+#btnCrearEspacio{
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnCrearEspacio:hover{
+    background-color: #2980b9;
+}
+#btnGuardarEstacionamiento{
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: #00ff00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnGuardarEstacionamiento:hover{
+    background-color: #03d403;
+}
+ .footer{
+    margin-top: 50px;
+ }
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

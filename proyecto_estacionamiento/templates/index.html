@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Inicio</title>
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css" integrity="sha384-jLKHWMqul+os/wpJjJ4DufCJxBJ1u7VRHz1JbBbx5lPUJf2J5fsmwKSu3A0bHxq3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <!-- Banner / Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 >Bienvenido a ParkingSmart</h1>
+            <p>Tu solución inteligente para encontrar estacionamiento sin estrés.</p>
+            
+        </div>
+    </section>
+    <!-- Sección de Servicios -->
+    <section class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-list">
+                <div class="service">
+                    <img src="{{ url_for('static', filename='imgs/Lupa.png') }}" alt="Servicio 1">
+                    <h3>Buscador de ubicaciones</h3>
+                    <p>Podra usar nuestra aplicacion para buscar el lugar a donde quiera ir.</p>
+                </div>
+                <div class="service">
+                    <img src="{{ url_for('static', filename='imgs/Comentarios.png') }}" alt="Servicio 2">
+                    <h3>Comentarios</h3>
+                    <p>Podras cometar que te parecio el servicio del estacionamiento.</p>
+                </div>
+                <div class="service">
+                    <img src="{{ url_for('static', filename='imgs/Timer.png') }}" alt="Servicio 3">
+                    <h3>Temporizador </h3>
+                    <p>Cuando te estaciones empezara a contar el tiempo en elq ue te quedes en el cajon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características o Servicios -->
+    <section class="features">
+        <!-- Característica Uno - Alineada a la izquierda -->
+        <div class="feature-item white-background">
+            <h3>Facilidad</h3>
+            <p1>Facilidad de encontrar los estacionamientos.</p1>
+        </div>
+    
+        <!-- Característica Dos - Alineada a la derecha -->
+        <div class="feature-item dark-background">
+            <h3>Mapa de estacionamiento</h3>
+            <p1>La información a tiempo real, mostrada para el mapa de estacionamiento</p1>
+        </div>
+    
+        <!-- Característica Tres - Alineada a la izquierda -->
+        <div class="feature-item white-background">
+            <h3>Opiniones</h3>
+            <p1>Poder compartir sus opiniones en los comentarios.</p1>
+        </div>
+    
+        <!-- Característica Cuatro - Alineada a la derecha -->
+        <div class="feature-item dark-background">
+            <h3>Sencillo</h3>
+            <p1>La aplicación es sensilla para los usarios.</p1>
+        </div>
+    </section>
+            
+    <!-- Acerca de -->
+    <section class="about">
+        <div class="container">
+            <h2>Integrantes</h2>
+            <p>Jair Said Millan Justo - Programador</p>
+            <p>Fatima Celeste Navarrete Barrios - Analista</p>
+            <p>Ramses Ramos Lopez - Diseñador</p>
+            <p>Rafael Pantoja De Jesus - Tester</p>
+            <p>Jason Aleman Torres - Organizador</p>
+            <p>Jatziri Zuñiga Espinoza - Documentadora</p>
+            <p>Marisol Monserrat Oropez Pérez - Diseñadora</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    {% include 'footer.html' %}
+                      
+</body>
+<script>
+    // Espera a que el documento se cargue completamente
+    document.addEventListener('DOMContentLoaded', function() {
+        var hero = document.getElementById('hero');
+        var heroContent = document.querySelector('.hero-content');
+
+        // Función para ejecutarse cada vez que el usuario se desplace
+        window.onscroll = function() {
+            if (window.pageYOffset > 100) { 
+                hero.classList.add('small');
+                heroContent.style.transform = 'translateY(-20%)'; 
+            } else {
+                hero.classList.remove('small');
+                heroContent.style.transform = 'translateY(0)'; // Restablece la posición del contenido
+            }
+        };
+    });
+</script>
+</html>
